@@ -27,7 +27,7 @@
   </parent>
 
   <artifactId>mybatis</artifactId>
-  <version>3.5.8-SNAPSHOT</version>
+  <version>XP-3.5.8-SNAPSHOT</version>
   <packaging>jar</packaging>
 
   <name>mybatis</name>
@@ -247,7 +247,7 @@
       <groupId>mysql</groupId>
       <artifactId>mysql-connector-java</artifactId>
       <version>8.0.27</version>
-      <scope>test</scope>
+<!--      <scope>test</scope>-->
     </dependency>
     <dependency>
       <groupId>org.assertj</groupId>
