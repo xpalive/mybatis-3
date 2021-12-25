@@ -16,12 +16,12 @@ public class App {
     InputStream inputStream;
     try {
       inputStream = Resources.getResourceAsStream(resource);
-
       SqlSessionFactory sqlSessionFactory =
         new SqlSessionFactoryBuilder().build(inputStream);
       try (SqlSession session = sqlSessionFactory.openSession()) {
         CmsBlogMapper mapper = session.getMapper(CmsBlogMapper.class);
         CmsBlog blog = mapper.selectById(101);
+        System.out.println(blog);
       }
     } catch (IOException e) {
       e.printStackTrace();

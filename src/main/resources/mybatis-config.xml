@@ -4,6 +4,10 @@
   "http://mybatis.org/dtd/mybatis-3-config.dtd">
 <configuration>
 
+
+  <settings>
+    <setting name="mapUnderscoreToCamelCase" value="true"/>
+  </settings>
   <typeAliases>
     <typeAlias alias="CmsBlog" type="com.xpalive.cmsblog.model.CmsBlog"/>
   </typeAliases>
@@ -12,7 +16,7 @@
       <transactionManager type="JDBC"/>
       <dataSource type="POOLED">
         <property name="driver" value="com.mysql.cj.jdbc.Driver"/>
-        <property name="url" value="jdbc:mysql://192.168.10.81:3306/tuling?useSSL=false&amp;allowPublicKeyRetrieval=true&amp;serverTimezone=UTC+8"/>
+        <property name="url" value="jdbc:mysql://192.168.10.81:3306/tuling?useSSL=false&amp;allowPublicKeyRetrieval=true&amp;connectionTimeZone=Asia/Shanghai"/>
         <property name="username" value="root"/>
         <property name="password" value="123@abcd"/>
       </dataSource>

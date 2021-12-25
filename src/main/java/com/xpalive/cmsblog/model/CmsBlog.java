@@ -1,6 +1,7 @@
 package com.xpalive.cmsblog.model;
 
 import java.time.LocalDateTime;
+import java.util.StringJoiner;
 
 
 public class CmsBlog {
@@ -57,5 +58,17 @@ public class CmsBlog {
 
   public void setModifyTime(LocalDateTime modifyTime) {
     this.modifyTime = modifyTime;
+  }
+
+  @Override
+  public String toString() {
+    return new StringJoiner(", ", CmsBlog.class.getSimpleName() + "[", "]")
+      .add("id=" + id)
+      .add("title='" + title + "'")
+      .add("author='" + author + "'")
+      .add("content='" + content + "'")
+      .add("createTime=" + createTime)
+      .add("modifyTime=" + modifyTime)
+      .toString();
   }
 }
