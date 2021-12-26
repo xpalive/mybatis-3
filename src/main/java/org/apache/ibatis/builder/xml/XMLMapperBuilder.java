@@ -93,10 +93,11 @@ public class XMLMapperBuilder extends BaseBuilder {
   public void parse() {
     // 判断是否被加载过
     if (!configuration.isResourceLoaded(resource)) {
-      // 解析绝对路径
+      // 解析绝对路径/mapper
       configurationElement(parser.evalNode("/mapper"));
       // 添加到加载集合中
       configuration.addLoadedResource(resource);
+
       bindMapperForNamespace();
     }
 
