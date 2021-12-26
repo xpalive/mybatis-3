@@ -91,8 +91,11 @@ public class XMLMapperBuilder extends BaseBuilder {
   }
 
   public void parse() {
+    // 判断是否被加载过
     if (!configuration.isResourceLoaded(resource)) {
+      // 解析绝对路径
       configurationElement(parser.evalNode("/mapper"));
+      // 添加到加载集合中
       configuration.addLoadedResource(resource);
       bindMapperForNamespace();
     }
@@ -113,9 +116,12 @@ public class XMLMapperBuilder extends BaseBuilder {
         throw new BuilderException("Mapper's namespace cannot be empty");
       }
       builderAssistant.setCurrentNamespace(namespace);
+      // 解析相对路径
       cacheRefElement(context.evalNode("cache-ref"));
       cacheElement(context.evalNode("cache"));
+      // 已废弃
       parameterMapElement(context.evalNodes("/mapper/parameterMap"));
+      // 解析绝对路径
       resultMapElements(context.evalNodes("/mapper/resultMap"));
       sqlElement(context.evalNodes("/mapper/sql"));
       buildStatementFromContext(context.evalNodes("select|insert|update|delete"));
